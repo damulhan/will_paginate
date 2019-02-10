@@ -152,8 +152,8 @@ module WillPaginate
         options.delete(:page)
         per_page = options.delete(:per_page) || self.per_page
         total    = options.delete(:total_entries)
-        hide_left_side = options.delete(:hide_left_side)
-        hide_right_side = options.delete(:hide_right_side)
+        options.delete(:hide_left_side)
+        options.delete(:hide_right_side)
 
         if options.any?
           raise ArgumentError, "unsupported parameters: %p" % options.keys
